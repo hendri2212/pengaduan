@@ -1,3 +1,8 @@
+<?php
+    include_once "config/connection.php";
+    // include "./assets/lib/fungsi_upload.php";
+    session_start()
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +16,7 @@
 <body>
     <div class="d-flex bg-warning">
         <div class="container d-flex justify-content-between align-items-center text-danger">
-            <h4>Aplikasi Pengaduan Masyarakat</h4>
+            <a href="/pengaduan" class="h4 text-decoration-none">Aplikasi Pengaduan Masyarakat</a>
             <ul class="nav justify-content-end bg-warning my-2">
                 <li class="nav-item mx-2">
                     <a class="nav-link btn btn-outline-danger" href="?page=login">Login</a>
