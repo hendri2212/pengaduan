@@ -12,7 +12,8 @@
             $_SESSION['id_petugas']     = $session['id_petugas'];
             $_SESSION['nama_petugas']   = $session['nama_petugas'];
             $_SESSION['level']          = $session['level'];
-            header("location:?page=approve");
+            $_SESSION['log']            = "logged";
+            header("location:?page=verifikasi");
         } else { ?>
             <script>alert("Username or Password Wrong")</script>
             <script language="javascript">document.location.href="?page=login"</script> -->

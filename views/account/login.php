@@ -48,6 +48,7 @@
         if ($result > 0) {
             $_SESSION['nik']    = $session['nik'];
             $_SESSION['nama']   = $session['nama'];
+            $_SESSION['log']    = "logged";
             header("location:?page=pengaduan");
         } else { ?>
             <script>alert("Username or Password Wrong")</script>

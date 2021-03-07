@@ -3,14 +3,14 @@
         include "views/beranda/home.php";
     }
     elseif ($_GET['page'] == 'register'){
-        if ($_SESSION['nik']!=null OR $_SESSION['id_petugas']!=null) {
+        if (isset($_SESSION['log'])=="logged") {
             header('Location: ?page=pengaduan');
         } else {
             include "views/account/register.php";
         }
     }
     elseif ($_GET['page'] == 'login'){
-        if ($_SESSION['nik']!=null OR $_SESSION['id_petugas']!=null) {
+        if (isset($_SESSION['log'])=="logged") {
             header('Location: ?page=pengaduan');
         } else {
             include "views/account/login.php";
@@ -37,6 +37,13 @@
             header('Location:?page=pengaduan');
         } else {
             include "views/data/verifikasi.php";
+        }
+    }
+    elseif ($_GET['page'] == 'validasi'){
+        if ($_SESSION['id_petugas']==null) {
+            header('Location:?page=pengaduan');
+        } else {
+            include "views/data/validasi.php";
         }
     }
 ?>

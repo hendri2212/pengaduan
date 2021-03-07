@@ -21,15 +21,15 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <td>No</td>
-                        <td>Tanggal</td>
-                        <td>NIK</td>
-                        <td>Laporan</td>
-                        <td>Foto</td>
-                        <td>Status</td>
-                        <td>Petugas</td>
-                        <td>Tanggal</td>
-                        <td>Tanggapan</td>
+                        <th>No</th>
+                        <th>Tanggal</th>
+                        <th>NIK</th>
+                        <th>Laporan</th>
+                        <th>Foto</th>
+                        <th>Status</th>
+                        <th>Petugas</th>
+                        <th>Tanggal</th>
+                        <th>Tanggapan</th>
                     </tr>
                 </thead>
                 <tbody>
