@@ -14,4 +14,7 @@
     elseif ($_GET['page'] == 'pengaduan'){
         include "views/report/report.php";
     }
+    elseif ($_GET['page'] == 'savereport'){
+        include "views/report/savereport.php";
+    }
 ?>

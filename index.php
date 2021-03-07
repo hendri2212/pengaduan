@@ -1,6 +1,6 @@
 <?php
-    include_once "config/connection.php";
-    // include "./assets/lib/fungsi_upload.php";
+    include_once "./config/connection.php";
+    include_once "./config/fileupload.php";
     session_start();
 ?>
 <!DOCTYPE html>
@@ -20,12 +20,15 @@
             <ul class="nav justify-content-end bg-warning my-2">
                 <?php if(isset($_SESSION['nik'])==null) { ?>
                 <li class="nav-item mx-2">
-                    <a class="nav-link btn btn-outline-danger" href="?page=login">Login</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link btn btn-success" href="?page=register">Register</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-outline-danger" href="?page=login">Login</a>
+                </li>
                 <?php } else { ?>
+                <li class="nav-item mx-2">
+                    <a class="nav-link btn btn-success" href="?page=pengaduan">Pengaduan</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link btn btn-outline-light" href="?page=logout">Logout</a>
                 </li>
