@@ -2,15 +2,15 @@
     <table class="table">
         <thead>
             <tr>
-                <th>No</th>
+                <th>No.</th>
                 <th>Tanggal</th>
                 <th>Nik</th>
                 <th>Laporan</th>
                 <th>Foto</th>
-                <th>Status</th>
-                <th>Tanggal</th>
-                <th>Tanggapan</th>
+                <th class="text-nowrap">Tanggal Respond</th>
                 <th>Petugas</th>
+                <th>Tanggapan</th>
+                <th>Status</th>
             </tr>
         </thead>
         <tbody>
@@ -20,15 +20,21 @@
                 while ($data = mysqli_fetch_object($query)) {
             ?>
             <tr>
-                <td><?php echo $no++ ?></td>
-                <td><?php echo $data->tgl_pengaduan ?></td>
+                <td class="text-center"><?php echo $no++ ?></td>
+                <td class="text-nowrap"><?php echo $data->tgl_pengaduan ?></td>
                 <td><?php echo $data->nik ?></td>
                 <td><?php echo $data->isi_laporan ?></td>
                 <td><img src="./assets/images/pengaduan/small_<?php echo $data->foto ?>" alt="<?php echo $data->foto ?>"></td>
-                <td><?php echo $data->status ?></td>
-                <td><?php echo $data->tgl_tanggapan ?></td>
-                <td><?php echo $data->tanggapan ?></td>
+                <td class="text-nowrap"><?php echo $data->tgl_tanggapan ?></td>
                 <td><?php echo $data->nama_petugas ?></td>
+                <td><?php echo $data->tanggapan ?></td>
+                <td>
+                    <?php if($data->status=="proses"){?>
+                    <span class="badge rounded-pill bg-info">Proses</span>
+                    <?php } else { ?>
+                    <span class="badge rounded-pill bg-success">Selesai</span>
+                    <?php } ?>
+                </td>
                 <?php if(empty($data->tanggapan)) { ?>
                 <td><a href="?page=validasi&id_pengaduan=<?php echo $data->id_pengaduan ?>&id_petugas=<?php echo $_SESSION['id_petugas'] ?>" class="btn btn-sm btn-primary">Cek</a></td>
                 <?php } ?>

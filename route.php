@@ -46,4 +46,11 @@
             include "views/data/validasi.php";
         }
     }
+    elseif ($_GET['page'] == 'petugas'){
+        if ($_SESSION['level']!="admin") {
+            header('Location:?page=pengaduan');
+        } else {
+            include "views/data/petugas.php";
+        }
+    }
 ?>

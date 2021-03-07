@@ -26,10 +26,10 @@
                         <th>NIK</th>
                         <th>Laporan</th>
                         <th>Foto</th>
-                        <th>Status</th>
+                        <th class="text-nowrap">Tgl ditanggapi</th>
                         <th>Petugas</th>
-                        <th>Tanggal</th>
                         <th>Tanggapan</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -45,18 +45,16 @@
                         <td><?php echo $data->nik ?></td>
                         <td><?php echo $data->isi_laporan ?></td>
                         <td><img src="./assets/images/pengaduan/small_<?php echo $data->foto ?>" alt="<?php echo $data->foto ?>"></td>
-                        <td>
-                            <?php
-                                if($data->status=="0") {
-                                    echo "Pending";
-                                } else {
-                                    echo $data->status;
-                                }
-                                ?>
-                        </td>
-                        <td><?php echo $data->nama_petugas ?></td>
                         <td><?php echo $data->tgl_tanggapan ?></td>
+                        <td><?php echo $data->nama_petugas ?></td>
                         <td><?php echo $data->tanggapan ?></td>
+                        <td>
+                            <?php if($data->status=="proses"){?>
+                            <span class="badge rounded-pill bg-info">Proses</span>
+                            <?php } else { ?>
+                            <span class="badge rounded-pill bg-success">Selesai</span>
+                            <?php } ?>
+                        </td>
                     </tr>
                     <?php } ?>
                 </tbody>

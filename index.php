@@ -25,16 +25,17 @@
                 <li class="nav-item">
                     <a class="nav-link btn btn-outline-danger" href="?page=login">Login</a>
                 </li>
-                <?php } elseif(isset($_SESSION['nik'])!=null) { ?>
+                <?php } if(isset($_SESSION['nik'])!=null) { ?>
                 <li class="nav-item mx-2">
                     <a class="nav-link btn btn-success" href="?page=pengaduan">Pengaduan</a>
                 </li>
-                <?php } elseif(isset($_SESSION['id_petugas'])!=null) {?>
-                <li class="nav-item">
-                    <a class="nav-link btn btn-success" href="?page=verifikasi">Data Pengaduan</a>
-                </li>
+                <?php } if(isset($_SESSION['level'])=='admin') {?>
                 <li class="nav-item mx-2">
                     <a class="nav-link btn btn-success" href="?page=petugas">Data Petugas</a>
+                </li>
+                <?php } if(isset($_SESSION['level'])=='admin' OR isset($_SESSION['level'])=='petugas') {?>
+                <li class="nav-item mx-2">
+                    <a class="nav-link btn btn-success" href="?page=verifikasi">Data Pengaduan</a>
                 </li>
                 <?php } ?>
                 <?php if(isset($_SESSION['nik'])!=null OR isset($_SESSION['id_petugas'])!=null) { ?>
