@@ -18,26 +18,35 @@
         <div class="container d-flex justify-content-between align-items-center text-danger">
             <a href="/pengaduan" class="h4 text-decoration-none">Aplikasi Pengaduan Masyarakat</a>
             <ul class="nav justify-content-end bg-warning my-2">
-                <?php if(isset($_SESSION['nik'])==null) { ?>
+                <?php if(isset($_SESSION['nik'])==null AND isset($_SESSION['id_petugas'])==null) { ?>
                 <li class="nav-item mx-2">
                     <a class="nav-link btn btn-success" href="?page=register">Register</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link btn btn-outline-danger" href="?page=login">Login</a>
                 </li>
-                <?php } else { ?>
+                <?php } elseif(isset($_SESSION['nik'])!=null) { ?>
                 <li class="nav-item mx-2">
                     <a class="nav-link btn btn-success" href="?page=pengaduan">Pengaduan</a>
                 </li>
+                <?php } elseif(isset($_SESSION['id_petugas'])!=null) {?>
                 <li class="nav-item">
-                    <a class="nav-link btn btn-outline-light" href="?page=logout">Logout</a>
+                    <a class="nav-link btn btn-success" href="?page=verifikasi">Data Pengaduan</a>
                 </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link btn btn-success" href="?page=petugas">Data Petugas</a>
+                </li>
+                <?php } ?>
+                <?php if(isset($_SESSION['nik'])!=null OR isset($_SESSION['id_petugas'])!=null) { ?>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-light" href="?page=logout">Logout</a>
+                    </li>
                 <?php } ?>
             </ul>
         </div>
     </div>
     <div class="container">
-        <?php include("content.php") ?>
+        <?php include("route.php") ?>
     </div>
 </body>
 </html>
