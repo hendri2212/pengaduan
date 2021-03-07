@@ -1,0 +1,2 @@
+<h5 class="mt-5">Aplikasi Pengaduan Masyarakat</h5>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti eius nulla non provident dolorum ipsum sed perferendis molestiae consequuntur odio. Alias cumque aspernatur reiciendis suscipit beatae soluta magnam nihil adipisci!</p>
