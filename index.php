@@ -1,7 +1,7 @@
 <?php
     include_once "config/connection.php";
     // include "./assets/lib/fungsi_upload.php";
-    session_start()
+    session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,12 +18,18 @@
         <div class="container d-flex justify-content-between align-items-center text-danger">
             <a href="/pengaduan" class="h4 text-decoration-none">Aplikasi Pengaduan Masyarakat</a>
             <ul class="nav justify-content-end bg-warning my-2">
+                <?php if(isset($_SESSION['nik'])==null) { ?>
                 <li class="nav-item mx-2">
                     <a class="nav-link btn btn-outline-danger" href="?page=login">Login</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link btn btn-success" href="?page=register">Register</a>
                 </li>
+                <?php } else { ?>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-outline-light" href="?page=logout">Logout</a>
+                </li>
+                <?php } ?>
             </ul>
         </div>
     </div>

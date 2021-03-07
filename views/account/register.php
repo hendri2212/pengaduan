@@ -28,6 +28,10 @@
     </form>
 </div>
 <?php
+    if (isset($_SESSION['nik'])!=null) {
+        header("location:?page=pengaduan");
+    }
+
 	if(isset($_POST['register'])) {
 		$nik        = $_POST['nik'];
 		$nama	    = $_POST['nama'];
